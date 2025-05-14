@@ -7,7 +7,7 @@ pipeline{
     stage('1GetCode'){
       steps{
         sh "echo 'cloning the latest application version' "
-        git 'https://github.com/Lion-Technology-Solutions/welcome-app-docker-pipeline.git'
+        git branch: 'may09', url: 'https://github.com/Lion-Technology-Solutions/welcome-app-docker-pipeline.git'
       }
     }
     stage('3Test+Build'){
