@@ -33,6 +33,7 @@ pipeline{
         deploy adapters: [tomcat9(credentialsId: 'tomcat-deploy', path: '', url: 'http://3.96.210.211:8009/')], contextPath: 'may15', war: 'target/*war'
     }
 }
+  }
   post{
     always{
       emailext body: '''Hey guys
@@ -59,5 +60,4 @@ Landmark
 +1 437 215 2483''', recipientProviders: [buildUser(), developers()], subject: 'success', to: 'paypal-team@gmail.com'
     }
   } 
-}
 }
